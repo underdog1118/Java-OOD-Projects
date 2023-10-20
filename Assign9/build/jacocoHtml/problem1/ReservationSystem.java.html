@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReservationSystem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign9</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">ReservationSystem.java</span></div><h1>ReservationSystem.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+<span class="nc" id="L7">public class ReservationSystem {</span>
+
+<span class="nc" id="L9">  public static final Integer NUM_OF_ROWS = 15;</span>
+<span class="nc" id="L10">  public static final Integer NUM_OF_SEATS_IN_A_ROW = 10;</span>
+
+  public static void main(String[] args) {
+    /**
+     * Setting up theater object
+     */
+
+    //add rows for wheelchair
+<span class="nc" id="L18">    List&lt;Integer&gt; rowsForChair = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L19">    rowsForChair.add(1);</span>
+<span class="nc" id="L20">    rowsForChair.add(5);</span>
+
+<span class="nc" id="L22">    Theater theater = new Theater(&quot;Good Theater&quot;, NUM_OF_ROWS, NUM_OF_SEATS_IN_A_ROW, rowsForChair);</span>
+<span class="nc" id="L23">    ReservationsService service = new ReservationsService();  //~1</span>
+
+    /**
+     * prompt to user for instructions
+     */
+<span class="nc" id="L28">    Scanner sc = new Scanner(System.in);</span>
+    while (true) {
+<span class="nc" id="L30">      System.out.println(&quot;What would you like to do?&quot;);</span>
+<span class="nc" id="L31">      String command = sc.nextLine();</span>
+<span class="nc" id="L32">      command = command.trim();</span>
+      // Show the seat map of Theater
+<span class="nc bnc" id="L34" title="All 2 branches missed.">      if (command.equals(&quot;show&quot;)) {</span>
+<span class="nc" id="L35">        System.out.println(service.show(theater));  // ~2</span>
+        // Exit the program
+<span class="nc bnc" id="L37" title="All 2 branches missed.">      } else if (command.equals(&quot;done&quot;)) {</span>
+<span class="nc" id="L38">        System.out.println(&quot;Have a nice day!&quot;);</span>
+<span class="nc" id="L39">        break;</span>
+        // Book seats under a given name and number of seats.
+<span class="nc bnc" id="L41" title="All 4 branches missed.">      } else if (command.length() &gt; 7 &amp;&amp; command.startsWith(&quot;reserve&quot;)) {</span>
+<span class="nc" id="L42">        String subString = command.substring(7).trim();</span>
+        // Check if there's enough seat to reserve
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (subString.matches(&quot;-?\\d+&quot;)) {</span>
+<span class="nc" id="L45">          Integer count = Integer.parseInt(subString);</span>
+
+<span class="nc bnc" id="L47" title="All 2 branches missed.">          if (count &lt;= theater.getNumberOfSeatsPerRow()) {</span>
+<span class="nc" id="L48">            System.out.println(&quot;Do you need wheelchair accessible seats?&quot;);</span>
+<span class="nc" id="L49">            String command2 = sc.nextLine().trim();</span>
+<span class="nc bnc" id="L50" title="All 4 branches missed.">            if (command2.equals(&quot;yes&quot;) || command2.equals(&quot;no&quot;)) {</span>
+<span class="nc" id="L51">              System.out.println(&quot;What's your name?&quot;);</span>
+<span class="nc" id="L52">              String name = sc.nextLine().trim();</span>
+              // Reserve for accessible seats.
+<span class="nc" id="L54">              int rowNumber = service.reserve(theater, count, command2, name); //~3</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">              if (rowNumber &gt; 0) {</span>
+<span class="nc" id="L56">                System.out.println(</span>
+<span class="nc" id="L57">                    &quot;I’ve reserved &quot; + count + &quot; seats for you at the &quot; + theater.getName()</span>
+                        + &quot; in row, &quot; + rowNumber + &quot;, &quot; + name + &quot;.&quot;);
+              } else {
+<span class="nc" id="L60">                System.out.println(</span>
+                    &quot;Sorry We don't have that many seats available together to you.&quot;);
+              }
+<span class="nc" id="L63">            } else {</span>
+<span class="nc" id="L64">              System.out.println(&quot;Command not found!&quot;);</span>
+            }
+<span class="nc" id="L66">          } else {</span>
+<span class="nc" id="L67">            System.out.println(&quot;Sorry, we don’t have that many seats together for you.&quot;);</span>
+          }
+<span class="nc" id="L69">        } else {</span>
+<span class="nc" id="L70">          System.out.println(&quot;Command not found!&quot;);</span>
+        }
+<span class="nc" id="L72">      } else {</span>
+<span class="nc" id="L73">        System.out.println(&quot;Command not found!&quot;);</span>
+      }
+<span class="nc" id="L75">    }</span>
+<span class="nc" id="L76">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

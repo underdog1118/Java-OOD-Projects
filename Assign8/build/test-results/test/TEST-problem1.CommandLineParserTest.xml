@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="problem1.CommandLineParserTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-04-06T23:29:56" hostname="ZhengpengQiudeMacBook-Pro.local" time="0.013">
+  <properties/>
+  <testcase name="getOutputDir()" classname="problem1.CommandLineParserTest" time="0.001"/>
+  <testcase name="getLetterRequired()" classname="problem1.CommandLineParserTest" time="0.0"/>
+  <testcase name="testToString()" classname="problem1.CommandLineParserTest" time="0.005"/>
+  <testcase name="checkRequiredArgs()" classname="problem1.CommandLineParserTest" time="0.001"/>
+  <testcase name="getEmailTemplate()" classname="problem1.CommandLineParserTest" time="0.0"/>
+  <testcase name="processArgs()" classname="problem1.CommandLineParserTest" time="0.001"/>
+  <testcase name="testHashCode()" classname="problem1.CommandLineParserTest" time="0.0"/>
+  <testcase name="getEmailRequired()" classname="problem1.CommandLineParserTest" time="0.001"/>
+  <testcase name="testEquals()" classname="problem1.CommandLineParserTest" time="0.001"/>
+  <testcase name="getLetterTemplate()" classname="problem1.CommandLineParserTest" time="0.001"/>
+  <testcase name="getCsvFile()" classname="problem1.CommandLineParserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

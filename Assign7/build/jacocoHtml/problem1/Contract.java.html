@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Contract.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign7</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Contract.java</span></div><h1>Contract.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.util.Objects;
+
+/**
+ * abstract class contract contains information for a contract. This includes the asking price and
+ * if the contract is negotiable.
+ */
+public abstract class Contract {
+
+  private Double askingPrice;
+  private Boolean isNegotiable;
+
+  /**
+   * constructor for class contract
+   *
+   * @param askingPrice  asking price of contract
+   * @param isNegotiable if contract is negotiable
+   */
+<span class="fc" id="L20">  public Contract(Double askingPrice, Boolean isNegotiable) {</span>
+<span class="fc" id="L21">    this.askingPrice = checkAskingPrice(askingPrice);</span>
+<span class="fc" id="L22">    this.isNegotiable = isNegotiable;</span>
+<span class="fc" id="L23">  }</span>
+
+  /**
+   * checks if asking price is negative or not
+   *
+   * @param askingPrice price of contract
+   * @return askingPrice
+   */
+  private Double checkAskingPrice(Double askingPrice) {
+<span class="fc bfc" id="L32" title="All 2 branches covered.">    if (askingPrice &lt; 0) {</span>
+<span class="fc" id="L33">      throw new IllegalArgumentException(&quot;Asking price cannot be negative.&quot;);</span>
+    } else {
+<span class="fc" id="L35">      return askingPrice;</span>
+    }
+  }
+
+  /**
+   * gettter for askingPrice
+   *
+   * @return askingPrice
+   */
+  public Double getAskingPrice() {
+<span class="fc" id="L45">    return askingPrice;</span>
+  }
+
+  /**
+   * getter for if negotiable
+   *
+   * @return if contract is negotiable
+   */
+  public Boolean getNegotiable() {
+<span class="fc" id="L54">    return isNegotiable;</span>
+  }
+
+  /**
+   * calculates the value  of contract
+   * @return asking price
+   */
+  protected Double calculatePrice(Double commissionPrice){
+<span class="fc" id="L62">    return askingPrice * commissionPrice;</span>
+  }
+
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L67" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L68">      return true;</span>
+    }
+<span class="fc bfc" id="L70" title="All 4 branches covered.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L71">      return false;</span>
+    }
+<span class="fc" id="L73">    Contract contract = (Contract) o;</span>
+<span class="pc bpc" id="L74" title="2 of 4 branches missed.">    return Objects.equals(askingPrice, contract.askingPrice) &amp;&amp; Objects.equals(</span>
+        isNegotiable, contract.isNegotiable);
+  }
+
+  @Override
+  public int hashCode() {
+<span class="fc" id="L80">    return Objects.hash(askingPrice, isNegotiable);</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="fc" id="L85">    return &quot;Contract{&quot; +</span>
+        &quot;askingPrice=&quot; + askingPrice +
+        &quot;, isNegotiable=&quot; + isNegotiable +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Agent.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign7</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Agent.java</span></div><h1>Agent.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+/**
+ * An agent has a name, a list of listings, a commission rate, and a total earning.
+ * @param &lt;P&gt; property type
+ * @param &lt;C&gt; contract type
+ */
+public class Agent&lt;P extends Property, C extends Contract&gt; implements IAgent&lt;P,C&gt;{
+  private String name;
+  private List&lt;Listing&lt;P,C&gt;&gt; collectionOfListing;
+  private Double commissionRate;
+  private Double totalEarning;
+
+  /**
+   * @param name -- name
+   * @param collectionOfListing -- listings
+   * @param commissionRate -- commission rate
+   * @param totalEarning -- total Earning
+   */
+  public Agent(String name, List&lt;Listing&lt;P, C&gt;&gt; collectionOfListing, Double commissionRate,
+<span class="fc" id="L25">      Double totalEarning) {</span>
+<span class="fc" id="L26">    this.name = name;</span>
+<span class="fc" id="L27">    this.collectionOfListing = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L28">    this.setCommissionRate(commissionRate);</span>
+<span class="fc" id="L29">    this.setTotalEarning(totalEarning);</span>
+<span class="fc" id="L30">  }</span>
+
+  /**
+   * Gets the value of name.
+   *
+   * @return the value of name
+   */
+  public String getName() {
+<span class="fc" id="L38">    return this.name;</span>
+  }
+
+  /**
+   * Sets the name.
+   *
+   * @param name name
+   */
+  public void setName(String name) {
+<span class="fc" id="L47">    this.name = name;</span>
+<span class="fc" id="L48">  }</span>
+
+  /**
+   * Gets the value of collectionOfListing.
+   *
+   * @return the value of collectionOfListing
+   */
+  public List&lt;Listing&lt;P, C&gt;&gt; getCollectionOfListing() {
+<span class="fc" id="L56">    return this.collectionOfListing;</span>
+  }
+
+  /**
+   * Sets the collectionOfListing.
+   *
+   * @param collectionOfListing collectionOfListing
+   */
+  public void setCollectionOfListing(List&lt;Listing&lt;P, C&gt;&gt; collectionOfListing) {
+<span class="fc" id="L65">    this.collectionOfListing = collectionOfListing;</span>
+<span class="fc" id="L66">  }</span>
+
+  /**
+   * Gets the value of commissionRate.
+   *
+   * @return the value of commissionRate
+   */
+  public Double getCommissionRate() {
+<span class="fc" id="L74">    return this.commissionRate;</span>
+  }
+
+  /**
+   * Sets the commissionRate.
+   *
+   * @param commissionRate commissionRate
+   */
+  public void setCommissionRate(Double commissionRate) {
+<span class="pc bpc" id="L83" title="1 of 4 branches missed.">    if (commissionRate &gt;= 0 &amp;&amp; commissionRate &lt;= 1.0) {</span>
+<span class="fc" id="L84">      this.commissionRate = commissionRate;</span>
+    } else {
+<span class="fc" id="L86">      throw new IllegalArgumentException(&quot;The rate is not valid&quot;);</span>
+    }
+<span class="fc" id="L88">  }</span>
+
+  /**
+   * Gets the value of totalEarning.
+   *
+   * @return the value of totalEarning
+   */
+  public Double getTotalEarning() {
+<span class="fc" id="L96">    return this.totalEarning;</span>
+  }
+
+  /**
+   * Sets the totalEarning.
+   *
+   * @param totalEarning totalEarning
+   */
+  public void setTotalEarning(Double totalEarning) {
+<span class="fc bfc" id="L105" title="All 2 branches covered.">    if (totalEarning &gt;= 0) {</span>
+<span class="fc" id="L106">      this.totalEarning = totalEarning;</span>
+    } else {
+<span class="fc" id="L108">      throw new IllegalArgumentException(&quot;The total earning is not valid&quot;);</span>
+    }
+<span class="fc" id="L110">  }</span>
+
+  /**
+   * Adds an (appropriate) listing to the Agent’s current listing collection.
+   *
+   * @param listing listing to add
+   */
+  @Override
+  public void addListing(Listing&lt;P,C&gt; listing) {
+<span class="fc" id="L119">    this.collectionOfListing.add(listing);</span>
+<span class="fc" id="L120">  }</span>
+
+  /**
+   * This method will be called when an Agent successfully makes a sale / rental of one of their
+   * listings.
+   *
+   * @param listing listing to complete
+   */
+  @Override
+  public void completeListing(Listing&lt;P,C&gt; listing) {
+<span class="fc bfc" id="L130" title="All 2 branches covered.">    if (!this.collectionOfListing.contains(listing)) {</span>
+<span class="fc" id="L131">      throw new IllegalArgumentException(&quot;This listing doesn't exist&quot;);</span>
+    }
+<span class="fc" id="L133">    this.collectionOfListing.remove(listing);</span>
+
+<span class="fc" id="L135">    this.totalEarning += listing.getContract().calculatePrice(this.commissionRate);</span>
+<span class="fc" id="L136">  }</span>
+
+  /**
+   * Drop a listing from the Agent’s collection without adjusting their earnings.
+   *
+   * @param listing listing to drop
+   */
+  @Override
+  public void dropListing(Listing&lt;P,C&gt; listing) {
+<span class="fc bfc" id="L145" title="All 2 branches covered.">    if (!this.collectionOfListing.contains(listing)) {</span>
+<span class="fc" id="L146">      throw new IllegalArgumentException(&quot;This listing doesn't exist&quot;);</span>
+    }
+<span class="fc" id="L148">    this.collectionOfListing.remove(listing);</span>
+<span class="fc" id="L149">  }</span>
+
+  /**
+   * This returns the amount of money the Agent would make if they successfully completed all
+   * listings in their collection
+   *
+   * @return the amount of money
+   */
+  @Override
+  public double getTotalPortfolioValue() {
+<span class="fc" id="L159">    double res = 0.0;</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">    for (Listing&lt;P,C&gt; listing : this.collectionOfListing) {</span>
+<span class="fc" id="L161">      res += listing.getContract().calculatePrice(this.commissionRate);</span>
+<span class="fc" id="L162">    }</span>
+<span class="fc" id="L163">    return res;</span>
+  }
+
+  /**
+   * equals method for the class
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L171" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L172">      return true;</span>
+    }
+<span class="fc bfc" id="L174" title="All 4 branches covered.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L175">      return false;</span>
+    }
+<span class="fc" id="L177">    Agent&lt;?, ?&gt; agent = (Agent&lt;?, ?&gt;) o;</span>
+<span class="pc bpc" id="L178" title="2 of 4 branches missed.">    return Objects.equals(name, agent.name) &amp;&amp; Objects.equals(collectionOfListing,</span>
+<span class="pc bpc" id="L179" title="1 of 2 branches missed.">        agent.collectionOfListing) &amp;&amp; Objects.equals(commissionRate, agent.commissionRate)</span>
+<span class="pc bnc" id="L180" title="All 2 branches missed.">        &amp;&amp; Objects.equals(totalEarning, agent.totalEarning);</span>
+  }
+
+  /**
+   * hashCode method for the class
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L188">    return Objects.hash(name, collectionOfListing, commissionRate, totalEarning);</span>
+  }
+
+  /**
+   * toString method for the class
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L196">    return &quot;Agent{&quot; +</span>
+        &quot;name='&quot; + name + '\'' +
+        &quot;, collectionOfListing=&quot; + collectionOfListing +
+        &quot;, commissionRate=&quot; + commissionRate +
+        &quot;, totalEarning=&quot; + totalEarning +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

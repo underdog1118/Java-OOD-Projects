@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmailGenerator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign8</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">EmailGenerator.java</span></div><h1>EmailGenerator.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.util.Objects;
+
+/**
+ * This class generates emails for insurance company members to the given filePath
+ * based on a given template file and a CSV file containing member information.
+ */
+public class EmailGenerator extends Generator {
+<span class="fc" id="L10">  private final String PREFIX = &quot;Email&quot;;</span>
+  /**
+   Constructor for the Generator class.
+   @param fileName the name of the template file.
+   @param folderName the name of the folder where the generated files will be saved.
+   @param filePath the name of the csv file
+   */
+  public EmailGenerator(String fileName, String folderName, String filePath) {
+<span class="fc" id="L18">    super(fileName, folderName, filePath);</span>
+<span class="fc" id="L19">    super.filePrefix = this.PREFIX;</span>
+<span class="fc" id="L20">  }</span>
+
+  /**
+   * @return the filePrefix, as String
+   */
+  public String getPREFIX() {
+<span class="fc" id="L26">    return PREFIX;</span>
+  }
+  /**
+   * @param o - the given object
+   * @return true if equals, false otherwise
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">    if (this == o) {</span>
+<span class="nc" id="L35">      return true;</span>
+    }
+<span class="pc bpc" id="L37" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L38">      return false;</span>
+    }
+<span class="fc bfc" id="L40" title="All 2 branches covered.">    if (!super.equals(o)) {</span>
+<span class="fc" id="L41">      return false;</span>
+    }
+<span class="fc" id="L43">    EmailGenerator that = (EmailGenerator) o;</span>
+<span class="fc" id="L44">    return Objects.equals(PREFIX, that.PREFIX);</span>
+  }
+  /**
+   *
+   * @return the hashcode of the object, as an integer
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L52">    return Objects.hash(super.hashCode(), PREFIX);</span>
+  }
+  /**
+   * @return the information of the EmailGenerator, as a String
+   */
+  @Override
+  public String toString() {
+<span class="nc" id="L59">    return &quot;EmailGenerator{&quot; +</span>
+        &quot;PREFIX='&quot; + PREFIX + '\'' +
+<span class="nc" id="L61">        &quot;, &quot; + super.toString();</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

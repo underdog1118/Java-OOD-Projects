@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.39.0" timestamp="2023-03-21T20:23:37.450">
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Agent.java">
+<violation beginline="6" endline="6" begincolumn="18" endcolumn="21" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Agent" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'name'.
+</violation>
+<violation beginline="6" endline="6" begincolumn="18" endcolumn="21" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Agent" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="7" endline="7" begincolumn="19" endcolumn="37" rule="LongVariable" ruleset="Code Style" package="problem1" class="Agent" variable="collectionOfListing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like collectionOfListing
+</violation>
+<violation beginline="7" endline="7" begincolumn="19" endcolumn="37" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Agent" variable="collectionOfListing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'collectionOfListing'.
+</violation>
+<violation beginline="7" endline="7" begincolumn="19" endcolumn="37" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Agent" variable="collectionOfListing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="8" endline="8" begincolumn="18" endcolumn="31" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Agent" variable="commissionRate" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'commissionRate'.
+</violation>
+<violation beginline="8" endline="8" begincolumn="18" endcolumn="31" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Agent" variable="commissionRate" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="9" endline="9" begincolumn="18" endcolumn="29" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Agent" variable="totalEarning" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'totalEarning'.
+</violation>
+<violation beginline="9" endline="9" begincolumn="18" endcolumn="29" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Agent" variable="totalEarning" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="11" endline="11" begincolumn="37" endcolumn="55" rule="LongVariable" ruleset="Code Style" package="problem1" class="Agent" method="Agent" variable="collectionOfListing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like collectionOfListing
+</violation>
+<violation beginline="11" endline="11" begincolumn="29" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Agent" method="Agent" variable="collectionOfListing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'collectionOfListing' is not assigned and could be declared final
+</violation>
+<violation beginline="11" endline="11" begincolumn="58" endcolumn="78" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Agent" method="Agent" variable="commissionRate" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'commissionRate' is not assigned and could be declared final
+</violation>
+<violation beginline="11" endline="11" begincolumn="16" endcolumn="26" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Agent" method="Agent" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="11" endline="11" begincolumn="81" endcolumn="99" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Agent" method="Agent" variable="totalEarning" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'totalEarning' is not assigned and could be declared final
+</violation>
+<violation beginline="19" endline="19" begincolumn="26" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Agent" method="addListing" variable="listing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'listing' is not assigned and could be declared final
+</violation>
+<violation beginline="24" endline="24" begincolumn="31" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Agent" method="completeListing" variable="listing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'listing' is not assigned and could be declared final
+</violation>
+<violation beginline="29" endline="29" begincolumn="27" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Agent" method="dropListing" variable="listing" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'listing' is not assigned and could be declared final
+</violation>
+</file>
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Commercial.java">
+<violation beginline="10" endline="10" begincolumn="19" endcolumn="30" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Commercial" variable="numOfOffices" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="11" endline="11" begincolumn="19" endcolumn="35" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Commercial" variable="suitableForRetail" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="20" endline="20" begincolumn="21" endcolumn="34" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Commercial" method="Commercial" variable="address" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'address' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="51" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Commercial" method="Commercial" variable="numOfOffices" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'numOfOffices' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="37" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Commercial" method="Commercial" variable="size" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'size' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="73" endcolumn="97" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Commercial" method="Commercial" variable="suitableForRetail" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'suitableForRetail' is not assigned and could be declared final
+</violation>
+<violation beginline="47" endline="47" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Code Style" package="problem1" class="Commercial" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="47" endline="47" begincolumn="25" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Commercial" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'o' is not assigned and could be declared final
+</violation>
+<violation beginline="49" endline="49" begincolumn="7" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Commercial" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="52" endline="52" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Commercial" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="55" endline="55" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Commercial" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="57" endline="57" begincolumn="5" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Commercial" method="equals" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'that' could be declared final
+</violation>
+</file>
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Contract.java">
+<violation beginline="3" endline="11" begincolumn="17" endcolumn="1" rule="AbstractNaming" ruleset="Code Style" package="problem1" class="Contract" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#abstractnaming" priority="3">
+Abstract classes should be named AbstractXXX
+</violation>
+<violation beginline="3" endline="11" begincolumn="17" endcolumn="1" rule="AbstractClassWithoutAbstractMethod" ruleset="Best Practices" package="problem1" class="Contract" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#abstractclasswithoutabstractmethod" priority="3">
+This abstract class does not have any abstract methods
+</violation>
+<violation beginline="4" endline="4" begincolumn="19" endcolumn="29" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Contract" variable="askingPrice" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'askingPrice'.
+</violation>
+<violation beginline="4" endline="4" begincolumn="19" endcolumn="29" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Contract" variable="askingPrice" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="5" endline="5" begincolumn="19" endcolumn="30" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Contract" variable="isNegotiable" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'isNegotiable'.
+</violation>
+<violation beginline="5" endline="5" begincolumn="19" endcolumn="30" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Contract" variable="isNegotiable" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="7" endline="7" begincolumn="19" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Contract" method="Contract" variable="askingPrice" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'askingPrice' is not assigned and could be declared final
+</violation>
+<violation beginline="7" endline="7" begincolumn="39" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Contract" method="Contract" variable="isNegotiable" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'isNegotiable' is not assigned and could be declared final
+</violation>
+</file>
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Listing.java">
+<violation beginline="4" endline="4" begincolumn="13" endcolumn="20" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Listing" variable="property" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'property'.
+</violation>
+<violation beginline="4" endline="4" begincolumn="13" endcolumn="20" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Listing" variable="property" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="5" endline="5" begincolumn="13" endcolumn="20" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Listing" variable="contract" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'contract'.
+</violation>
+<violation beginline="5" endline="5" begincolumn="13" endcolumn="20" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Listing" variable="contract" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="7" endline="7" begincolumn="30" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Listing" method="Listing" variable="contract" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'contract' is not assigned and could be declared final
+</violation>
+<violation beginline="7" endline="7" begincolumn="18" endcolumn="27" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Listing" method="Listing" variable="property" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'property' is not assigned and could be declared final
+</violation>
+</file>
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Property.java">
+<violation beginline="8" endline="86" begincolumn="17" endcolumn="1" rule="AbstractNaming" ruleset="Code Style" package="problem1" class="Property" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#abstractnaming" priority="3">
+Abstract classes should be named AbstractXXX
+</violation>
+<violation beginline="8" endline="86" begincolumn="17" endcolumn="1" rule="AbstractClassWithoutAbstractMethod" ruleset="Best Practices" package="problem1" class="Property" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#abstractclasswithoutabstractmethod" priority="3">
+This abstract class does not have any abstract methods
+</violation>
+<violation beginline="9" endline="9" begincolumn="18" endcolumn="24" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Property" variable="address" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="10" endline="10" begincolumn="19" endcolumn="22" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Property" variable="size" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="17" endline="17" begincolumn="19" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Property" method="Property" variable="address" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'address' is not assigned and could be declared final
+</violation>
+<violation beginline="17" endline="17" begincolumn="35" endcolumn="46" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Property" method="Property" variable="size" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'size' is not assigned and could be declared final
+</violation>
+<violation beginline="29" endline="29" begincolumn="58" endcolumn="65" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Property" variable="number" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'number' is not assigned and could be declared final
+</violation>
+<violation beginline="29" endline="29" begincolumn="68" endcolumn="73" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Property" variable="zero" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'zero' is not assigned and could be declared final
+</violation>
+<violation beginline="58" endline="58" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Code Style" package="problem1" class="Property" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="58" endline="58" begincolumn="25" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Property" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'o' is not assigned and could be declared final
+</violation>
+<violation beginline="60" endline="60" begincolumn="7" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Property" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="63" endline="63" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Property" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="65" endline="65" begincolumn="5" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Property" method="equals" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'property' could be declared final
+</violation>
+</file>
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Rental.java">
+<violation beginline="4" endline="4" begincolumn="19" endcolumn="30" rule="UnusedPrivateField" ruleset="Best Practices" package="problem1" class="Rental" variable="termInMonths" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'termInMonths'.
+</violation>
+<violation beginline="4" endline="4" begincolumn="19" endcolumn="30" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Rental" variable="termInMonths" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="6" endline="6" begincolumn="17" endcolumn="34" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Rental" method="Rental" variable="askingPrice" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'askingPrice' is not assigned and could be declared final
+</violation>
+<violation beginline="6" endline="6" begincolumn="37" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Rental" method="Rental" variable="isNegotiable" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'isNegotiable' is not assigned and could be declared final
+</violation>
+<violation beginline="6" endline="6" begincolumn="59" endcolumn="78" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Rental" method="Rental" variable="termInMonths" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'termInMonths' is not assigned and could be declared final
+</violation>
+</file>
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Residential.java">
+<violation beginline="10" endline="10" begincolumn="19" endcolumn="31" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Residential" variable="numOfBedrooms" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="11" endline="11" begincolumn="18" endcolumn="31" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Residential" variable="numOfBathrooms" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="20" endline="20" begincolumn="22" endcolumn="35" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Residential" method="Residential" variable="address" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'address' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="75" endcolumn="95" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Residential" method="Residential" variable="numOfBathrooms" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'numOfBathrooms' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="52" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Residential" method="Residential" variable="numOfBedrooms" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'numOfBedrooms' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="38" endcolumn="49" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Residential" method="Residential" variable="size" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'size' is not assigned and could be declared final
+</violation>
+<violation beginline="49" endline="49" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Code Style" package="problem1" class="Residential" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="49" endline="49" begincolumn="25" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Residential" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'o' is not assigned and could be declared final
+</violation>
+<violation beginline="51" endline="51" begincolumn="7" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Residential" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="54" endline="54" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Residential" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="57" endline="57" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Residential" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="59" endline="59" begincolumn="5" endcolumn="38" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Residential" method="equals" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'that' could be declared final
+</violation>
+</file>
+<file name="/Users/joshua/Desktop/CS5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Sale.java">
+<violation beginline="3" endline="8" begincolumn="8" endcolumn="1" rule="ShortClassName" ruleset="Code Style" package="problem1" class="Sale" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortclassname" priority="4">
+Avoid short class names like Sale
+</violation>
+<violation beginline="5" endline="5" begincolumn="15" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Sale" method="Sale" variable="askingPrice" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'askingPrice' is not assigned and could be declared final
+</violation>
+<violation beginline="5" endline="5" begincolumn="35" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Sale" method="Sale" variable="isNegotiable" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'isNegotiable' is not assigned and could be declared final
+</violation>
+</file>
+</pmd>

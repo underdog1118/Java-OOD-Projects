@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TemplateReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign8</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">TemplateReader.java</span></div><h1>TemplateReader.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.io.*;
+import java.nio.file.NoSuchFileException;
+import java.util.ArrayList;
+import java.util.Objects;
+
+/**
+ * Class TemplateReader reads the template with given templateName
+ * and save each line of the template in ArrayList&lt;String&gt;
+ */
+public class TemplateReader {
+
+  private ArrayList&lt;String&gt; template;
+  private String templateName;
+
+  /**
+   * Constructor of TemplateReader
+   * @param templateName, the given templateName, as a String
+   */
+<span class="fc" id="L21">  public TemplateReader(String templateName) {</span>
+<span class="fc" id="L22">    this.template = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L23">    this.templateName = templateName;</span>
+<span class="fc" id="L24">    this.readFile();</span>
+<span class="fc" id="L25">  }</span>
+
+  /**
+   * Method to read the given file, and return the template as an ArrayList&lt;String&gt;
+   * @return - the template, as an ArrayList&lt;String&gt;
+   */
+  public ArrayList&lt;String&gt; getTemplate() {
+<span class="fc" id="L32">    return template;</span>
+  }
+
+  /**
+   * Helper method of getTemplate
+   */
+  private void readFile(){
+<span class="fc" id="L39">    BufferedReader reader = null;</span>
+    try {
+<span class="fc" id="L41">      reader = new BufferedReader(new FileReader(templateName));</span>
+      String line;
+<span class="fc bfc" id="L43" title="All 2 branches covered.">      while ((line = reader.readLine()) != null) {</span>
+<span class="fc" id="L44">        template.add(line);</span>
+      }
+<span class="fc" id="L46">    } catch (NoSuchFileException | FileNotFoundException nsf) {</span>
+<span class="fc" id="L47">      nsf.printStackTrace();</span>
+<span class="nc" id="L48">    } catch (IOException e) {</span>
+<span class="nc" id="L49">      throw new RuntimeException(e);</span>
+    } finally {
+      try {
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (reader != null) {</span>
+<span class="fc" id="L53">          reader.close();</span>
+        }
+<span class="nc" id="L55">      } catch (IOException e) {</span>
+<span class="nc" id="L56">        e.printStackTrace();</span>
+<span class="fc" id="L57">      }</span>
+    }
+<span class="fc" id="L59">  }</span>
+
+  /**
+   * Getters for templateName
+   * @return templateName, as a String
+   */
+  public String getTemplateName() {
+<span class="fc" id="L66">    return templateName;</span>
+  }
+
+  /**
+   * @param o - the given object
+   * @return true if equals, false otherwise
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L75" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L76">      return true;</span>
+    }
+<span class="fc bfc" id="L78" title="All 4 branches covered.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L79">      return false;</span>
+    }
+<span class="fc" id="L81">    TemplateReader that = (TemplateReader) o;</span>
+<span class="pc bpc" id="L82" title="2 of 4 branches missed.">    return Objects.equals(template, that.template) &amp;&amp; Objects.equals(templateName,</span>
+        that.templateName);
+  }
+  /**
+   *
+   * @return the hashcode of the object, as an integer
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L91">    return Objects.hash(template, templateName);</span>
+  }
+
+  /**
+   * @return the information of the TemplateReader, as a String
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L99">    return &quot;TemplateReader{&quot; +</span>
+        &quot;template=&quot; + template +
+        &quot;, templateName='&quot; + templateName + '\'' +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Theater.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign9</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Theater.java</span></div><h1>Theater.java</h1><pre class="source lang-java linenums">package problem1;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+/**
+ The Theater class represents a theater with rows of seats. It contains methods for creating and retrieving rows and seats.
+ */
+public class Theater {
+  private String name;
+  private List&lt;Row&gt; rows;
+  private List&lt;Integer&gt; accessibleRows;
+  private Integer numberOfSeatsPerRow;
+
+
+  /**
+   Constructs a new Theater with the given name, number of rows, number of seats per row, and list of accessible rows.
+   @param name the name of the theater
+   @param numberOfRows the number of rows in the theater
+   @param numberOfSeatsPerRow the number of seats in each row of the theater
+   @param accessibleRows a list of row numbers that are accessible for wheelchair users
+   @throws IllegalArgumentException if there are no accessible rows in the theater
+   */
+<span class="fc" id="L24">  public Theater(String name, int numberOfRows, int numberOfSeatsPerRow, List&lt;Integer&gt; accessibleRows) {</span>
+<span class="fc" id="L25">    this.name = name;</span>
+<span class="fc" id="L26">    this.rows = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L27">    this.accessibleRows = accessibleRows;</span>
+<span class="fc" id="L28">    this.numberOfSeatsPerRow = numberOfSeatsPerRow;</span>
+
+    // Ensure there's at least one accessible row
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">    if (accessibleRows.isEmpty()) {</span>
+<span class="nc" id="L32">      throw new IllegalArgumentException(&quot;There must be at least one accessible row.&quot;);</span>
+    }
+
+    // Create rows and add them to the theater
+<span class="fc bfc" id="L36" title="All 2 branches covered.">    for (int i = 1; i &lt;= numberOfRows; i++) {</span>
+<span class="fc" id="L37">      Boolean isAccessible = accessibleRows.contains(i);</span>
+<span class="fc" id="L38">      rows.add(new Row(i, numberOfSeatsPerRow, isAccessible));</span>
+    }
+<span class="fc" id="L40">  }</span>
+
+  /**
+   Returns the name of the theater.
+   @return the name of the theater
+   */
+  public String getName() {
+<span class="fc" id="L47">    return name;</span>
+  }
+
+
+  /**
+   Returns the list of rows in the theater.
+   @return the list of rows in the theater
+   */
+  public List&lt;Row&gt; getRows() {
+<span class="fc" id="L56">    return rows;</span>
+  }
+
+  /**
+   Returns the number of seats in each row of the theater.
+   @return the number of seats in each row of the theater
+   */
+  public List&lt;Integer&gt; getAccessibleRows() {
+<span class="fc" id="L64">    return accessibleRows;</span>
+  }
+
+  /**
+   * Gets the value of numberOfSeatsPerRow.
+   *
+   * @return the value of numberOfSeatsPerRow
+   */
+  public Integer getNumberOfSeatsPerRow() {
+<span class="fc" id="L73">    return this.numberOfSeatsPerRow;</span>
+  }
+
+
+  /**
+   Compares this theater to the specified object. The result is true if and only if the argument is not null and is a
+   theater object that has the same name, rows, accessibleRows, and numberOfSeatsPerRow as this object.
+   @param o the object to compare this theater against
+   @return true if the given object represents a Theater equivalent to this theater, false otherwise
+   */
+
+  @Override
+  public boolean equals(Object o) {
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">    if (this == o) {</span>
+<span class="nc" id="L87">      return true;</span>
+    }
+<span class="pc bpc" id="L89" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L90">      return false;</span>
+    }
+<span class="fc" id="L92">    Theater theater = (Theater) o;</span>
+<span class="pc bpc" id="L93" title="2 of 4 branches missed.">    return Objects.equals(name, theater.name) &amp;&amp; Objects.equals(rows,</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        theater.rows) &amp;&amp; Objects.equals(accessibleRows, theater.accessibleRows)</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">        &amp;&amp; Objects.equals(numberOfSeatsPerRow, theater.numberOfSeatsPerRow);</span>
+  }
+
+  /**
+   Returns a hash code value for the theater.
+   @return a hash code value for the theater
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L104">    return Objects.hash(name, rows, accessibleRows, numberOfSeatsPerRow);</span>
+  }
+
+
+  /**
+   Returns a string representation of the theater, which includes a string representation of each row in the theater,
+   separated by a newline character.
+   @return a string representation of the theater
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L115">    StringBuilder stringBuilder = new StringBuilder();</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">    for (Row row : rows) {</span>
+<span class="fc" id="L117">      stringBuilder.append(row.toString()).append(&quot;\n&quot;);</span>
+<span class="fc" id="L118">    }</span>
+<span class="fc" id="L119">    return stringBuilder.toString();</span>
+
+  }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Commercial.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign7</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Commercial.java</span></div><h1>Commercial.java</h1><pre class="source lang-java linenums">/**
+ * Class Commercial is the child class of class Property,
+ * it has numOfOffices and suitableForRetail.
+ */
+package problem1;
+
+import java.util.Objects;
+
+public class Commercial extends Property{
+  private Integer numOfOffices;
+  private Boolean suitableForRetail;
+
+  /**
+   * Constructor of class Residential
+   * @param address - the address of the properties, as a String
+   * @param size - the size of the properties, as an Integer
+   * @param numOfOffices - the number of offices, as an Integer
+   * @param suitableForRetail - true if the Commercial is suitable for retail, as a Boolean value
+   */
+  public Commercial(String address, Integer size, Integer numOfOffices, Boolean suitableForRetail) {
+<span class="fc" id="L21">    super(address, size);</span>
+<span class="fc" id="L22">    this.numOfOffices = super.checkNonNegative(numOfOffices, 0);</span>
+<span class="fc" id="L23">    this.suitableForRetail = suitableForRetail;</span>
+<span class="fc" id="L24">  }</span>
+
+  /**
+   * Return the number of offices of the commercial property
+   * @return - the number of offices, as an Integer
+   */
+  public Integer getNumOfOffices() {
+<span class="fc" id="L31">    return numOfOffices;</span>
+  }
+  /**
+   * Return if the commercial property is suitable for retail.
+   * @return - true if the Commercial is suitable for retail, false otherwise
+   */
+  public Boolean getSuitableForRetail() {
+<span class="fc" id="L38">    return suitableForRetail;</span>
+  }
+  /**
+   * Check is the given object equals to this object
+   * @param o - a given object
+   * @return true is equals, false otherwise
+   */
+
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L48" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L49">      return true;</span>
+    }
+<span class="fc bfc" id="L51" title="All 4 branches covered.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L52">      return false;</span>
+    }
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">    if (!super.equals(o)) {</span>
+<span class="nc" id="L55">      return false;</span>
+    }
+<span class="fc" id="L57">    Commercial that = (Commercial) o;</span>
+<span class="pc bpc" id="L58" title="2 of 4 branches missed.">    return Objects.equals(numOfOffices, that.numOfOffices) &amp;&amp; Objects.equals(</span>
+        suitableForRetail, that.suitableForRetail);
+  }
+  /**
+   * @return the hashcode of the Property
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L66">    return Objects.hash(super.hashCode(), numOfOffices, suitableForRetail);</span>
+  }
+  /**
+   * @return a String of the information about the Property
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L73">    return &quot;Commercial{&quot; +</span>
+<span class="fc" id="L74">        super.toString() +</span>
+        &quot;, numOfOffices=&quot; + numOfOffices +
+        &quot;, suitableForRetail=&quot; + suitableForRetail +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

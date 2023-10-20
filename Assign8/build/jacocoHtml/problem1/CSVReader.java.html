@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CSVReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign8</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">CSVReader.java</span></div><h1>CSVReader.java</h1><pre class="source lang-java linenums">package problem1;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+/**
+ * This class reads a CSV file and converts its content into a list of string arrays.
+ * Each string array represents a row in the CSV file.
+ */
+public class CSVReader {
+
+  /**
+   * The file path of the CSV file to be read.
+   */
+  private String filePath;
+
+  /**
+   * The list that stores the content of the CSV file as string arrays.
+   */
+<span class="fc" id="L23">  private List&lt;String[]&gt; data = new ArrayList&lt;&gt;();</span>
+
+  /**
+   * Constructor for creating a CSVReader object with the given file path.
+   *
+   * @param filePath the file path of the CSV file to be read
+   */
+<span class="fc" id="L30">  public CSVReader(String filePath) {</span>
+<span class="fc" id="L31">    this.filePath = filePath;</span>
+<span class="fc" id="L32">  }</span>
+
+  /**
+   * Reads the CSV file and returns its content as a list of string arrays.
+   *
+   * @return the content of the CSV file as a list of string arrays
+   */
+  public List&lt;String[]&gt; readCSV(){
+<span class="fc" id="L40">    BufferedReader reader = null;</span>
+    try {
+<span class="fc" id="L42">      reader = new BufferedReader(new FileReader(filePath));</span>
+      String line;
+<span class="fc bfc" id="L44" title="All 2 branches covered.">      while ((line = reader.readLine()) != null) {</span>
+<span class="fc" id="L45">        String[] row = line.split(&quot;\&quot;,\&quot;&quot;);</span>
+<span class="fc" id="L46">        row[0] = row[0].replaceAll(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L47">        row[row.length - 1] = row[row.length - 1].replaceAll(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L48">        data.add(row);</span>
+<span class="fc" id="L49">      }</span>
+<span class="nc" id="L50">    } catch (IOException e) {</span>
+<span class="nc" id="L51">      e.printStackTrace();</span>
+    } finally {
+      try {
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        if (reader != null) {</span>
+<span class="fc" id="L55">          reader.close();</span>
+        }
+<span class="nc" id="L57">      } catch (IOException e) {</span>
+<span class="nc" id="L58">        e.printStackTrace();</span>
+<span class="fc" id="L59">      }</span>
+    }
+<span class="fc" id="L61">    return data;</span>
+  }
+  /**
+   * Getters for filePath
+   * @return filePath, as a String
+   */
+  public String getFilePath() {
+<span class="fc" id="L68">    return filePath;</span>
+  }
+  /**
+   * Getters for data
+   * @return data, as a List&lt;String[]&gt;
+   */
+  public List&lt;String[]&gt; getData() {
+<span class="fc" id="L75">    return data;</span>
+  }
+  /**
+   * @param o - the given object
+   * @return true if equals, false otherwise
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L83" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L84">      return true;</span>
+    }
+<span class="fc bfc" id="L86" title="All 4 branches covered.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L87">      return false;</span>
+    }
+<span class="fc" id="L89">    CSVReader csvReader = (CSVReader) o;</span>
+<span class="pc bpc" id="L90" title="2 of 4 branches missed.">    return Objects.equals(filePath, csvReader.filePath) &amp;&amp; Objects.equals(data,</span>
+        csvReader.data);
+  }
+  /**
+   *
+   * @return the hashcode of the object, as an integer
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L99">    return Objects.hash(filePath, data);</span>
+  }
+  /**
+   * @return the information of the CSVReader, as a String
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L106">    return &quot;CSVReader{&quot; +</span>
+        &quot;filePath='&quot; + filePath + '\'' +
+        &quot;, data=&quot; + data +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

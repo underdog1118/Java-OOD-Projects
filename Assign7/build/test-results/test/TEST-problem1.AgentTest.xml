@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="problem1.AgentTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2023-04-14T04:28:02" hostname="karenas-mbp.lan" time="0.029">
+  <properties/>
+  <testcase name="testToString()" classname="problem1.AgentTest" time="0.015"/>
+  <testcase name="testGetName()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="testGetTotalEarning()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="setCommissionRate()" classname="problem1.AgentTest" time="0.0"/>
+  <testcase name="dropListing()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="testSetCollectionListing()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="testHashCode()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="testSetTotalEarning()" classname="problem1.AgentTest" time="0.0"/>
+  <testcase name="testGetCollectionListing()" classname="problem1.AgentTest" time="0.0"/>
+  <testcase name="getCommissionRate()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="testEquals()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="testSetName()" classname="problem1.AgentTest" time="0.0"/>
+  <testcase name="completeListing()" classname="problem1.AgentTest" time="0.001"/>
+  <testcase name="addListing()" classname="problem1.AgentTest" time="0.0"/>
+  <testcase name="getTotalPortfolioValue()" classname="problem1.AgentTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,15 @@
+-classpath '/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/build/classes/java/main:/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/build/resources/main'
+-d '/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/build/docs/javadoc'
+-doctitle 'Assign7 1.0 API'
+-notimestamp 
+-quiet 
+-windowtitle 'Assign7 1.0 API'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Contract.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Property.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Listing.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Commercial.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Agent.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/IAgent.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Sale.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Rental.java'
+'/Users/jonathan/Desktop/MSCS courses/cs5004/Student_repo_Zhengpeng_Qiu/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign7/src/main/java/problem1/Residential.java'

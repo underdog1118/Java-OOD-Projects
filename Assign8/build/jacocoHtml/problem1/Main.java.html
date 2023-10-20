@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign8</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.io.IOException;
+import java.util.List;
+
+/**
+ * Main function: Receives input, Triggers parsing of input
+ * Triggers processing of parsed input, Prints results
+ */
+<span class="nc" id="L10">public class Main {</span>
+  public static void main(String[] args) {
+    // args:
+    // --email --email-template email-template.txt --letter --letter-template letter-template.txt
+    // --output-dir emails_and_letters --csv-file insurance-company-members.csv
+
+    try {
+<span class="nc" id="L17">      CommandLineParser parser = new CommandLineParser(args);</span>
+<span class="nc" id="L18">      String folder = parser.getOutputDir();</span>
+<span class="nc" id="L19">      String csvPath = parser.getCsvFile();</span>
+
+      // if there is an --email option
+<span class="nc bnc" id="L22" title="All 2 branches missed.">      if (parser.getEmailRequired()) {</span>
+<span class="nc" id="L23">        String emailFileName = parser.getEmailTemplate();</span>
+<span class="nc" id="L24">        EmailGenerator email = new EmailGenerator(emailFileName, folder, csvPath);</span>
+<span class="nc" id="L25">        email.writeLetters();</span>
+      }
+      // if there is a --letter option
+<span class="nc bnc" id="L28" title="All 2 branches missed.">      if (parser.getLetterRequired()) {</span>
+<span class="nc" id="L29">        String letterFileName = parser.getLetterTemplate();</span>
+<span class="nc" id="L30">        LetterGenerator letter = new LetterGenerator(letterFileName, folder, csvPath);</span>
+<span class="nc" id="L31">        letter.writeLetters();</span>
+      }
+<span class="nc" id="L33">    } catch (InvalidArgumentsException e) {</span>
+<span class="nc" id="L34">      e.printStackTrace();</span>
+<span class="nc" id="L35">    }</span>
+<span class="nc" id="L36">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,10 @@
+  1. Our system Is using the MVC design pattern, where the Seat class represents a single seat in the
+theater,and the Row class represents a row of seats. The Theater class represents the overall theater
+with its rows and seats.These classes hold the state of the system and provide methods to manipulate and
+retrieve the data. Therefore, they are the classes that represent the Model layer of the MVC architecture.
+
+  2. The ReservationsService class is the controller as it handles the business logic for reserving seats,
+sorting rows, and updating the seating in the theater.
+
+  3. On the other hand, the ReservationSystem class handles the user interface and input/output operations.
+Therefore, it could be considered as the View part of the MVC pattern.

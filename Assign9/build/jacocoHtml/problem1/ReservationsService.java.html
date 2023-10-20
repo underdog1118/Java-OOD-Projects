@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReservationsService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign9</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">ReservationsService.java</span></div><h1>ReservationsService.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+/**
+ * The service class to reserve seats
+ */
+<span class="fc" id="L12">public class ReservationsService {</span>
+
+  /**
+   * Return a sorted rows by their distance to the center row
+   *
+   * @param t the theater
+   * @return a sorted rows by their distance to the center row
+   */
+  public ArrayList&lt;Integer&gt; sortRows(Theater t) {
+<span class="fc" id="L21">    int rows = t.getRows().size();  //number of rows</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">    double center = rows%2 == 0 ? (double) (rows/2+0.5) : (double) (rows/2+ 1);</span>
+<span class="fc" id="L23">    ArrayList&lt;Integer&gt; sortedRows = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">    for (int i = 0; i &lt; rows; i++) {</span>
+<span class="fc" id="L25">      sortedRows.add(i+1);</span>
+    }
+    // [8,  7,9,  6,11,  5,12,  ...]
+<span class="fc" id="L28">    sortedRows.sort(Comparator.comparingDouble(n -&gt; Math.abs((double) n - center)));</span>
+<span class="fc" id="L29">    return sortedRows;</span>
+  }
+
+  /**
+   * Reserves the seats in the theater, based on the choice on wheelchair-accessible seats
+   * and the name of the person.
+   *
+   * @param theater  The theater
+   * @param seats The number of seats to reserve
+   * @param answer The choice of whether wheelchair-accessible seats are required
+   * @param name  The name of the person for whom these seats are reserved
+   * @return the row that is selected to reserve
+   */
+  public int reserve(Theater theater, Integer seats, String answer, String name) {
+<span class="fc" id="L43">    ArrayList&lt;Integer&gt; sortedRows = sortRows(theater);</span>
+<span class="fc" id="L44">    int selectedRow = -1;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">    for (int i = 0; i &lt; sortedRows.size(); i++) {</span>
+<span class="fc" id="L46">      int rowNum = sortedRows.get(i)-1;  // i=0, rowNum-&gt;8-1 = 7</span>
+<span class="fc" id="L47">      Row row = theater.getRows().get(rowNum);</span>
+
+<span class="fc bfc" id="L49" title="All 4 branches covered.">      if ((answer.equals(&quot;no&quot;) &amp;&amp; row.isWheelchairAccessible()) ||</span>
+<span class="fc bfc" id="L50" title="All 4 branches covered.">          (answer.equals(&quot;yes&quot;) &amp;&amp; !row.isWheelchairAccessible())) {</span>
+<span class="fc" id="L51">        continue;</span>
+      }
+
+<span class="fc" id="L54">      int colNum = getAvailableCol(row, seats); //get available seats</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">      if (colNum == -1) {</span>
+<span class="fc" id="L56">        continue;</span>
+      }
+<span class="fc" id="L58">      selectedRow = rowNum;</span>
+<span class="fc" id="L59">      this.updateSeating(theater,selectedRow,colNum,seats, name);</span>
+<span class="fc" id="L60">      break;</span>
+    }
+
+    //If and only if all other rows are occupied,
+    //then the system will reserve seats in accessible rows to users who do not need accessible seats.
+<span class="fc bfc" id="L65" title="All 4 branches covered.">    if (selectedRow == -1 &amp;&amp; answer.equals(&quot;no&quot;)) {</span>
+<span class="fc" id="L66">      selectedRow = reserve(theater, seats, &quot;yes&quot;, name)-1;</span>
+    }
+<span class="fc" id="L68">    return selectedRow+1;  // &lt;= 0 -- invalid</span>
+  }
+
+  /**
+   * Return if the row is available, return the start col in the row; else return -1
+   *
+   * @param row the row need to check
+   * @param seatsToReserve the num of seats to reserve
+   * @return if the row is available, return the start col in the row;
+   * else return -1
+   */
+  public int getAvailableCol(Row row, int seatsToReserve)  {
+<span class="fc" id="L80">    int col = -1;</span>
+<span class="pc bpc" id="L81" title="1 of 2 branches missed.">    for (int i = 0; i &lt; row.getNumSeats(); i++) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">      if (row.get(i).getReservedFor() == null) {</span>
+<span class="fc" id="L83">        col = i;</span>
+<span class="fc" id="L84">        break;</span>
+      }
+    }
+<span class="fc bfc" id="L87" title="All 2 branches covered.">    return (row.getNumSeats() - col) &gt;= seatsToReserve ? col : -1;</span>
+  }
+
+
+  /**
+   * Updates the seats in the Theater based on the given index of row, the index of seat, the number of
+   * seats to reserve and the name of the person
+   *
+   * @param row  The index of the row to reserve
+   * @param col  The index of the seat to reserve
+   * @param num  The number of seats to reserve
+   * @param name The name of the person for whom the seats are reserved
+   */
+  public void updateSeating(Theater theater, Integer row, Integer col, Integer num, String name) {
+<span class="fc" id="L101">    Row selectedRow = theater.getRows().get(row);</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">    for (Integer c = col; c &lt; num + col; c++) {</span>
+<span class="fc" id="L103">      selectedRow.get(c).setReservedFor(name);</span>
+    }
+<span class="fc" id="L105">  }</span>
+
+  /**
+   * Return the view of the theater
+   *
+   * @param t the theater
+   * @return the view of the theater
+   */
+  public String show(Theater t) {
+<span class="fc" id="L114">    return t.toString();</span>
+  }
+
+  /**
+   * toString method for the class
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L122">    return &quot;ReservationsService{}&quot;;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

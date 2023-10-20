@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Row.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign9</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Row.java</span></div><h1>Row.java</h1><pre class="source lang-java linenums">package problem1;
+/**
+ * Class Row represent a row object, it has rowNumber, numSeats and isWheelchairAccessible fields.
+ */
+
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class Row extends ArrayList&lt;Seat&gt; {
+<span class="fc" id="L10">  private Integer MAX_NUM_SEAT = 26;</span>
+  private Integer rowNumber;
+  private Integer numSeats;
+  private boolean isWheelchairAccessible;
+
+  /**
+   * Constructor of the row
+   * @param rowNumber - the row number, 1 is the closest to screen
+   * @param numSeats - the number of seats
+   * @param isWheelchairAccessible - true if the row is Wheelchair Accessible
+   */
+<span class="fc" id="L21">  public Row(Integer rowNumber, Integer numSeats, boolean isWheelchairAccessible) {</span>
+<span class="fc" id="L22">    this.rowNumber = rowNumber;</span>
+<span class="fc" id="L23">    this.numSeats = numSeats;</span>
+<span class="fc" id="L24">    this.isWheelchairAccessible = isWheelchairAccessible;</span>
+<span class="fc" id="L25">    this.placeSeats();</span>
+<span class="fc" id="L26">  }</span>
+
+  /**
+   * Helper method for the constructor
+   * Place the seats with the given numSeats
+   */
+  private void placeSeats(){
+<span class="fc" id="L33">    String seatName = &quot;A&quot;;</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">    for(int i=0; i &lt; this.numSeats; i++){</span>
+      // If the seat number is exceed 26, or the name is not [A-Z]
+      // the exception would be called -&gt; No new seats can be created
+      // So there would be only 26 seats in a row even when trying to create a 27 seats row
+      try{
+<span class="fc" id="L39">        Seat seat = new Seat(String.valueOf((char) (seatName.charAt(0) + i)));</span>
+<span class="fc" id="L40">        this.add(seat);</span>
+<span class="fc" id="L41">      }catch (IllegalArgumentException e){</span>
+<span class="fc" id="L42">        this.numSeats = MAX_NUM_SEAT;</span>
+<span class="fc" id="L43">        System.out.println(&quot;The number of seats exceeds, number of seats set to 26.&quot;);</span>
+<span class="fc" id="L44">        System.out.println(e.getMessage());</span>
+<span class="fc" id="L45">      }</span>
+    }
+<span class="fc" id="L47">  }</span>
+
+
+  /**
+   * Getters for rowNumber
+   * @return - the rowNumber, as an Integer
+   */
+  public Integer getRowNumber() {
+<span class="fc" id="L55">    return rowNumber;</span>
+  }
+
+  /**
+   * Getters for numSeats
+   * @return - the numSeats, as an Integer
+   */
+  public Integer getNumSeats() {
+<span class="fc" id="L63">    return numSeats;</span>
+  }
+
+  /**
+   * Getters for isWheelchairAccessible
+   * @return - the isWheelchairAccessible, as a boolean value
+   */
+  public boolean isWheelchairAccessible() {
+<span class="fc" id="L71">    return isWheelchairAccessible;</span>
+  }
+
+  /**
+   * @param o - the given object
+   * @return - true, if its equals, false otherwise.
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L80" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L81">      return true;</span>
+    }
+<span class="pc bpc" id="L83" title="1 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L84">      return false;</span>
+    }
+<span class="fc bfc" id="L86" title="All 2 branches covered.">    if (!super.equals(o)) {</span>
+<span class="fc" id="L87">      return false;</span>
+    }
+<span class="fc" id="L89">    Row seats = (Row) o;</span>
+<span class="pc bpc" id="L90" title="2 of 4 branches missed.">    return isWheelchairAccessible == seats.isWheelchairAccessible &amp;&amp; Objects.equals(</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        rowNumber, seats.rowNumber) &amp;&amp; Objects.equals(numSeats, seats.numSeats);</span>
+  }
+
+  /**
+   * @return - the information of the row, as an integer
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L99">    return Objects.hash(super.hashCode(), rowNumber, numSeats, isWheelchairAccessible);</span>
+  }
+
+  /**
+   * Helper method for toString method
+   * @param seat - the given seat object
+   * @return - the mark of the seat depends on the seat's status
+   */
+  private String findSeatStatus(Seat seat){
+<span class="fc" id="L108">    String seatStatus = seat.getReservedFor();</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">    if(seatStatus == null){</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">      if(this.isWheelchairAccessible){</span>
+<span class="fc" id="L111">        return &quot; =&quot;;</span>
+      }else{
+<span class="fc" id="L113">        return &quot; _&quot;;</span>
+      }
+    }else{
+<span class="fc" id="L116">      return &quot; X&quot;;</span>
+    }
+  }
+
+  /**
+   * @return - the row status, as a String.
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L125">    String rowStatus = String.valueOf(this.rowNumber);</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">    for(Seat seat : this){</span>
+<span class="fc" id="L127">      rowStatus += this.findSeatStatus(seat);</span>
+<span class="fc" id="L128">    }</span>
+<span class="fc" id="L129">    return rowStatus;</span>
+  }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

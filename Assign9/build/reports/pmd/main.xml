@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.39.0" timestamp="2023-04-13T23:16:11.532">
+<file name="/Users/jonathan/Desktop/MSCS courses/cs5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign9/src/main/java/problem1/ReservationSystem.java">
+<violation beginline="10" endline="10" begincolumn="31" endcolumn="51" rule="LongVariable" ruleset="Code Style" package="problem1" class="ReservationSystem" variable="NUM_OF_SEATS_IN_A_ROW" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like NUM_OF_SEATS_IN_A_ROW
+</violation>
+<violation beginline="12" endline="12" begincolumn="27" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="args" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'args' is not assigned and could be declared final
+</violation>
+<violation beginline="18" endline="18" begincolumn="5" endcolumn="50" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'rowsForChair' could be declared final
+</violation>
+<violation beginline="22" endline="76" begincolumn="13" endcolumn="99" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="ReservationSystem" method="main" variable="theater" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'theater' (lines '22'-'76').
+</violation>
+<violation beginline="22" endline="22" begincolumn="5" endcolumn="99" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'theater' could be declared final
+</violation>
+<violation beginline="23" endline="76" begincolumn="25" endcolumn="59" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="ReservationSystem" method="main" variable="service" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'service' (lines '23'-'76').
+</violation>
+<violation beginline="23" endline="23" begincolumn="5" endcolumn="59" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'service' could be declared final
+</violation>
+<violation beginline="28" endline="28" begincolumn="13" endcolumn="14" rule="ShortVariable" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like sc
+</violation>
+<violation beginline="28" endline="28" begincolumn="13" endcolumn="14" rule="CloseResource" ruleset="Error Prone" package="problem1" class="ReservationSystem" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this InputStream object are closed after use
+</violation>
+<violation beginline="28" endline="76" begincolumn="13" endcolumn="39" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="ReservationSystem" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'sc' (lines '28'-'76').
+</violation>
+<violation beginline="28" endline="28" begincolumn="5" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'sc' could be declared final
+</violation>
+<violation beginline="30" endline="30" begincolumn="7" endcolumn="24" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="34" endline="34" begincolumn="11" endcolumn="32" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="34" endline="34" begincolumn="11" endcolumn="32" rule="PositionLiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#positionliteralsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="35" endline="35" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="37" endline="37" begincolumn="18" endcolumn="39" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="37" endline="37" begincolumn="18" endcolumn="39" rule="PositionLiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#positionliteralsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="38" endline="38" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="42" endline="42" begincolumn="9" endcolumn="54" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'subString' could be declared final
+</violation>
+<violation beginline="45" endline="45" begincolumn="11" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'count' could be declared final
+</violation>
+<violation beginline="48" endline="48" begincolumn="13" endcolumn="30" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="49" endline="49" begincolumn="13" endcolumn="50" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'command2' could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="17" endcolumn="38" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="50" endline="50" begincolumn="17" endcolumn="38" rule="PositionLiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#positionliteralsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="50" endline="50" begincolumn="43" endcolumn="63" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="50" endline="50" begincolumn="43" endcolumn="63" rule="PositionLiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#positionliteralsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="51" endline="51" begincolumn="15" endcolumn="32" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="52" endline="52" begincolumn="15" endcolumn="48" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'name' could be declared final
+</violation>
+<violation beginline="54" endline="54" begincolumn="15" endcolumn="77" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationSystem" method="main" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'rowNumber' could be declared final
+</violation>
+<violation beginline="56" endline="56" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="60" endline="60" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="64" endline="64" begincolumn="15" endcolumn="32" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="67" endline="67" begincolumn="13" endcolumn="30" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="70" endline="70" begincolumn="11" endcolumn="28" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="73" endline="73" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="ReservationSystem" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+</file>
+<file name="/Users/jonathan/Desktop/MSCS courses/cs5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign9/src/main/java/problem1/ReservationsService.java">
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="24" rule="UnnecessaryImport" ruleset="Code Style" package="problem1" class="ReservationsService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.Arrays'
+</violation>
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="24" rule="UnusedImports" ruleset="Best Practices" package="problem1" class="ReservationsService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Unused import 'java.util.Arrays'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="29" rule="UnnecessaryImport" ruleset="Code Style" package="problem1" class="ReservationsService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.Collections'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="29" rule="UnusedImports" ruleset="Best Practices" package="problem1" class="ReservationsService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Unused import 'java.util.Collections'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="22" rule="UnnecessaryImport" ruleset="Code Style" package="problem1" class="ReservationsService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.List'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Best Practices" package="problem1" class="ReservationsService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Unused import 'java.util.List'
+</violation>
+<violation beginline="12" endline="124" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="problem1" class="ReservationsService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="20" endline="20" begincolumn="10" endcolumn="27" rule="LooseCoupling" ruleset="Best Practices" package="problem1" class="ReservationsService" method="sortRows" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#loosecoupling" priority="3">
+Avoid using implementation types like 'ArrayList'; use the interface instead
+</violation>
+<violation beginline="20" endline="20" begincolumn="46" endcolumn="46" rule="ShortVariable" ruleset="Code Style" package="problem1" class="ReservationsService" method="sortRows" variable="t" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like t
+</violation>
+<violation beginline="20" endline="20" begincolumn="38" endcolumn="46" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="sortRows" variable="t" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 't' is not assigned and could be declared final
+</violation>
+<violation beginline="21" endline="21" begincolumn="5" endcolumn="33" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="sortRows" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'rows' could be declared final
+</violation>
+<violation beginline="22" endline="30" begincolumn="12" endcolumn="78" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="ReservationsService" method="sortRows" variable="center" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'center' (lines '22'-'30').
+</violation>
+<violation beginline="22" endline="22" begincolumn="5" endcolumn="78" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="sortRows" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'center' could be declared final
+</violation>
+<violation beginline="23" endline="23" begincolumn="5" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="sortRows" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'sortedRows' could be declared final
+</violation>
+<violation beginline="42" endline="42" begincolumn="54" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="answer" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'answer' is not assigned and could be declared final
+</violation>
+<violation beginline="42" endline="42" begincolumn="69" endcolumn="79" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="42" endline="42" begincolumn="39" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="seats" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'seats' is not assigned and could be declared final
+</violation>
+<violation beginline="42" endline="42" begincolumn="22" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="theater" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'theater' is not assigned and could be declared final
+</violation>
+<violation beginline="43" endline="43" begincolumn="5" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'sortedRows' could be declared final
+</violation>
+<violation beginline="44" endline="58" begincolumn="7" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="ReservationsService" method="reserve" variable="selectedRow" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'selectedRow' (lines '44'-'58').
+</violation>
+<violation beginline="45" endline="61" begincolumn="5" endcolumn="5" rule="ForLoopCanBeForeach" ruleset="Best Practices" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#forloopcanbeforeach" priority="3">
+This for loop can be replaced by a foreach loop
+</violation>
+<violation beginline="46" endline="46" begincolumn="7" endcolumn="38" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'rowNum' could be declared final
+</violation>
+<violation beginline="47" endline="47" begincolumn="7" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'row' could be declared final
+</violation>
+<violation beginline="49" endline="49" begincolumn="12" endcolumn="30" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="49" endline="49" begincolumn="12" endcolumn="30" rule="PositionLiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#positionliteralsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="49" endline="49" begincolumn="12" endcolumn="62" rule="UselessParentheses" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="50" endline="50" begincolumn="12" endcolumn="31" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="50" endline="50" begincolumn="12" endcolumn="31" rule="PositionLiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#positionliteralsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="50" endline="50" begincolumn="12" endcolumn="64" rule="UselessParentheses" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="54" endline="54" begincolumn="7" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="reserve" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'colNum' could be declared final
+</violation>
+<violation beginline="60" endline="60" begincolumn="7" endcolumn="12" rule="AvoidBranchingStatementAsLastInLoop" ruleset="Error Prone" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#avoidbranchingstatementaslastinloop" priority="2">
+Avoid using a branching statement as the last in a loop.
+</violation>
+<violation beginline="65" endline="65" begincolumn="30" endcolumn="48" rule="LiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#literalsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="65" endline="65" begincolumn="30" endcolumn="48" rule="PositionLiteralsFirstInComparisons" ruleset="Best Practices" package="problem1" class="ReservationsService" method="reserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#positionliteralsfirstincomparisons" priority="3">
+Position literals first in String comparisons
+</violation>
+<violation beginline="79" endline="79" begincolumn="30" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="getAvailableCol" variable="row" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'row' is not assigned and could be declared final
+</violation>
+<violation beginline="79" endline="79" begincolumn="39" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="getAvailableCol" variable="seatsToReserve" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'seatsToReserve' is not assigned and could be declared final
+</violation>
+<violation beginline="80" endline="83" begincolumn="9" endcolumn="15" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="ReservationsService" method="getAvailableCol" variable="col" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'col' (lines '80'-'83').
+</violation>
+<violation beginline="100" endline="100" begincolumn="59" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="updateSeating" variable="col" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'col' is not assigned and could be declared final
+</violation>
+<violation beginline="100" endline="100" begincolumn="85" endcolumn="95" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="updateSeating" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="100" endline="100" begincolumn="72" endcolumn="82" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="updateSeating" variable="num" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'num' is not assigned and could be declared final
+</violation>
+<violation beginline="100" endline="100" begincolumn="46" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="updateSeating" variable="row" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'row' is not assigned and could be declared final
+</violation>
+<violation beginline="100" endline="100" begincolumn="29" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="updateSeating" variable="theater" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'theater' is not assigned and could be declared final
+</violation>
+<violation beginline="101" endline="105" begincolumn="9" endcolumn="48" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="ReservationsService" method="updateSeating" variable="selectedRow" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'selectedRow' (lines '101'-'105').
+</violation>
+<violation beginline="101" endline="101" begincolumn="5" endcolumn="48" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="updateSeating" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'selectedRow' could be declared final
+</violation>
+<violation beginline="113" endline="113" begincolumn="30" endcolumn="30" rule="ShortVariable" ruleset="Code Style" package="problem1" class="ReservationsService" method="show" variable="t" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like t
+</violation>
+<violation beginline="113" endline="113" begincolumn="22" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="ReservationsService" method="show" variable="t" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 't' is not assigned and could be declared final
+</violation>
+</file>
+<file name="/Users/jonathan/Desktop/MSCS courses/cs5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign9/src/main/java/problem1/Row.java">
+<violation beginline="9" endline="131" begincolumn="8" endcolumn="1" rule="ShortClassName" ruleset="Code Style" package="problem1" class="Row" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortclassname" priority="4">
+Avoid short class names like Row
+</violation>
+<violation beginline="9" endline="131" begincolumn="8" endcolumn="1" rule="MissingSerialVersionUID" ruleset="Error Prone" package="problem1" class="Row" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#missingserialversionuid" priority="3">
+Classes implementing Serializable should set a serialVersionUID
+</violation>
+<violation beginline="10" endline="10" begincolumn="19" endcolumn="30" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Row" variable="MAX_NUM_SEAT" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="10" endline="10" begincolumn="19" endcolumn="30" rule="VariableNamingConventions" ruleset="Code Style" package="problem1" class="Row" variable="MAX_NUM_SEAT" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#variablenamingconventions" priority="1">
+Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'MAX_NUM_SEAT' is not final.
+</violation>
+<violation beginline="10" endline="10" begincolumn="19" endcolumn="30" rule="FieldNamingConventions" ruleset="Code Style" package="problem1" class="Row" variable="MAX_NUM_SEAT" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#fieldnamingconventions" priority="1">
+The field name 'MAX_NUM_SEAT' doesn't match '[a-z][a-zA-Z0-9]*'
+</violation>
+<violation beginline="10" endline="10" begincolumn="11" endcolumn="36" rule="SuspiciousConstantFieldName" ruleset="Code Style" package="problem1" class="Row" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#suspiciousconstantfieldname" priority="3">
+The field name indicates a constant but its modifiers do not
+</violation>
+<violation beginline="10" endline="10" begincolumn="19" endcolumn="30" rule="VariableNamingConventions" ruleset="Code Style" package="problem1" class="Row" variable="MAX_NUM_SEAT" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#variablenamingconventions" priority="1">
+Variables should start with a lowercase character, 'MAX_NUM_SEAT' starts with uppercase character.
+</violation>
+<violation beginline="11" endline="11" begincolumn="19" endcolumn="27" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Row" variable="rowNumber" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="12" endline="12" begincolumn="19" endcolumn="26" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Row" variable="numSeats" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="13" endline="13" begincolumn="19" endcolumn="40" rule="LongVariable" ruleset="Code Style" package="problem1" class="Row" variable="isWheelchairAccessible" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like isWheelchairAccessible
+</violation>
+<violation beginline="13" endline="13" begincolumn="11" endcolumn="41" rule="AvoidFieldNameMatchingMethodName" ruleset="Error Prone" package="problem1" class="Row" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#avoidfieldnamematchingmethodname" priority="3">
+Field isWheelchairAccessible has the same name as a method
+</violation>
+<violation beginline="13" endline="13" begincolumn="19" endcolumn="40" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Row" variable="isWheelchairAccessible" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="21" endline="21" begincolumn="59" endcolumn="80" rule="LongVariable" ruleset="Code Style" package="problem1" class="Row" method="Row" variable="isWheelchairAccessible" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like isWheelchairAccessible
+</violation>
+<violation beginline="21" endline="26" begincolumn="10" endcolumn="3" rule="CallSuperInConstructor" ruleset="Code Style" package="problem1" class="Row" method="Row" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#callsuperinconstructor" priority="3">
+It is a good practice to call super() in a constructor
+</violation>
+<violation beginline="21" endline="21" begincolumn="51" endcolumn="80" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="Row" variable="isWheelchairAccessible" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'isWheelchairAccessible' is not assigned and could be declared final
+</violation>
+<violation beginline="21" endline="21" begincolumn="33" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="Row" variable="numSeats" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'numSeats' is not assigned and could be declared final
+</violation>
+<violation beginline="21" endline="21" begincolumn="14" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="Row" variable="rowNumber" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'rowNumber' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="47" begincolumn="12" endcolumn="25" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="problem1" class="Row" method="placeSeats" variable="seatName" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'seatName' (lines '33'-'47').
+</violation>
+<violation beginline="33" endline="33" begincolumn="5" endcolumn="25" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="placeSeats" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'seatName' could be declared final
+</violation>
+<violation beginline="39" endline="39" begincolumn="9" endcolumn="77" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="placeSeats" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'seat' could be declared final
+</violation>
+<violation beginline="43" endline="43" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="Row" method="placeSeats" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="44" endline="44" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" package="problem1" class="Row" method="placeSeats" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
+</violation>
+<violation beginline="79" endline="79" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Code Style" package="problem1" class="Row" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="79" endline="79" begincolumn="25" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'o' is not assigned and could be declared final
+</violation>
+<violation beginline="81" endline="81" begincolumn="7" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Row" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="84" endline="84" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Row" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="87" endline="87" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Row" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="89" endline="89" begincolumn="5" endcolumn="23" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="equals" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'seats' could be declared final
+</violation>
+<violation beginline="107" endline="107" begincolumn="33" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="findSeatStatus" variable="seat" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'seat' is not assigned and could be declared final
+</violation>
+<violation beginline="108" endline="108" begincolumn="5" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="findSeatStatus" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'seatStatus' could be declared final
+</violation>
+<violation beginline="111" endline="111" begincolumn="9" endcolumn="20" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Row" method="findSeatStatus" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="113" endline="113" begincolumn="9" endcolumn="20" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Row" method="findSeatStatus" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="126" endline="126" begincolumn="9" endcolumn="17" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Row" method="toString" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'seat' could be declared final
+</violation>
+</file>
+<file name="/Users/jonathan/Desktop/MSCS courses/cs5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign9/src/main/java/problem1/Seat.java">
+<violation beginline="7" endline="85" begincolumn="8" endcolumn="1" rule="ShortClassName" ruleset="Code Style" package="problem1" class="Seat" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortclassname" priority="4">
+Avoid short class names like Seat
+</violation>
+<violation beginline="8" endline="8" begincolumn="18" endcolumn="21" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Seat" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="15" endline="15" begincolumn="15" endcolumn="25" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Seat" method="Seat" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="23" endline="23" begincolumn="24" endcolumn="27" rule="NullAssignment" ruleset="Error Prone" package="problem1" class="Seat" method="Seat" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#nullassignment" priority="3">
+Assigning an Object to null is a code smell.  Consider refactoring.
+</violation>
+<violation beginline="30" endline="30" begincolumn="30" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Seat" method="setReservedFor" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="66" endline="66" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Code Style" package="problem1" class="Seat" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="66" endline="66" begincolumn="25" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Seat" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'o' is not assigned and could be declared final
+</violation>
+<violation beginline="68" endline="68" begincolumn="7" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Seat" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="71" endline="71" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Seat" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="73" endline="73" begincolumn="5" endcolumn="24" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Seat" method="equals" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'seat' could be declared final
+</violation>
+</file>
+<file name="/Users/jonathan/Desktop/MSCS courses/cs5004/Team_repo_Chung_Ang_Karena_Yunxuan_Zhengpeng/Assign9/src/main/java/problem1/Theater.java">
+<violation beginline="10" endline="10" begincolumn="18" endcolumn="21" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Theater" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="11" endline="11" begincolumn="21" endcolumn="24" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Theater" variable="rows" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="12" endline="12" begincolumn="25" endcolumn="38" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Theater" variable="accessibleRows" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="13" endline="13" begincolumn="19" endcolumn="37" rule="LongVariable" ruleset="Code Style" package="problem1" class="Theater" variable="numberOfSeatsPerRow" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like numberOfSeatsPerRow
+</violation>
+<violation beginline="13" endline="13" begincolumn="19" endcolumn="37" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="problem1" class="Theater" variable="numberOfSeatsPerRow" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="24" endline="24" begincolumn="53" endcolumn="71" rule="LongVariable" ruleset="Code Style" package="problem1" class="Theater" method="Theater" variable="numberOfSeatsPerRow" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+Avoid excessively long variable names like numberOfSeatsPerRow
+</violation>
+<violation beginline="24" endline="24" begincolumn="74" endcolumn="101" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="Theater" variable="accessibleRows" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'accessibleRows' is not assigned and could be declared final
+</violation>
+<violation beginline="24" endline="24" begincolumn="18" endcolumn="28" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="Theater" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="24" endline="24" begincolumn="31" endcolumn="46" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="Theater" variable="numberOfRows" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'numberOfRows' is not assigned and could be declared final
+</violation>
+<violation beginline="24" endline="24" begincolumn="49" endcolumn="71" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="Theater" variable="numberOfSeatsPerRow" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'numberOfSeatsPerRow' is not assigned and could be declared final
+</violation>
+<violation beginline="37" endline="37" begincolumn="7" endcolumn="55" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="Theater" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'isAccessible' could be declared final
+</violation>
+<violation beginline="85" endline="85" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Code Style" package="problem1" class="Theater" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="85" endline="85" begincolumn="25" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'o' is not assigned and could be declared final
+</violation>
+<violation beginline="87" endline="87" begincolumn="7" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Theater" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="90" endline="90" begincolumn="7" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="problem1" class="Theater" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="92" endline="92" begincolumn="5" endcolumn="33" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="equals" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'theater' could be declared final
+</violation>
+<violation beginline="115" endline="115" begincolumn="5" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="toString" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'stringBuilder' could be declared final
+</violation>
+<violation beginline="116" endline="116" begincolumn="10" endcolumn="16" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="problem1" class="Theater" method="toString" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'row' could be declared final
+</violation>
+</file>
+</pmd>

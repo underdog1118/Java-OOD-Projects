@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Seat.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign9</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Seat.java</span></div><h1>Seat.java</h1><pre class="source lang-java linenums">/**
+ * Class Seat represent a seat object, it has name and reservedFor as fields.
+ */
+package problem1;
+import java.util.Objects;
+
+public class Seat {
+  private String name;
+  private String reservedFor;
+
+  /**
+   * Constructor for Seat
+   * @param name - the name of the seat, a capital letter from A to Z.
+   */
+<span class="fc" id="L15">  public Seat(String name) throws IllegalArgumentException{</span>
+    // If the seat number is exceed 26, or the name is not [A-Z]
+    // the exception would be called -&gt; No new seats can be created
+<span class="fc bfc" id="L18" title="All 2 branches covered.">    if(name.matches(&quot;[A-Z]&quot;)){</span>
+<span class="fc" id="L19">      this.name = name;</span>
+    } else{
+<span class="fc" id="L21">      throw new IllegalArgumentException(&quot;The seat's name should be a capital letter from A to Z.&quot;);</span>
+    }
+<span class="fc" id="L23">    this.reservedFor = null;</span>
+<span class="fc" id="L24">  }</span>
+
+  /**
+   * Method to reserve the seat for the person
+   * @param name - the name of the person who make reservation of the seat
+   */
+  public void setReservedFor(String name){
+<span class="fc" id="L31">    this.reservedFor = name;</span>
+<span class="fc" id="L32">  }</span>
+
+  /**
+   * Getters for name of the seat
+   * @return - name, as a String
+   */
+  public String getName() {
+<span class="fc" id="L39">    return name;</span>
+  }
+
+  /**
+   * Getters for ReservedFor of the seat
+   * @return - reservedFor, as a String
+   */
+  public String getReservedFor() {
+<span class="fc" id="L47">    return reservedFor;</span>
+  }
+
+  /**
+   * @return - the information of the seat, as a String
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L55">    return &quot;Seat{&quot; +</span>
+        &quot;name='&quot; + name + '\'' +
+        &quot;, reservedFor='&quot; + reservedFor + '\'' +
+        '}';
+  }
+
+  /**
+   * @param o - the given object
+   * @return - true, if its equals, false otherwise.
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L67" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L68">      return true;</span>
+    }
+<span class="pc bpc" id="L70" title="1 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L71">      return false;</span>
+    }
+<span class="fc" id="L73">    Seat seat = (Seat) o;</span>
+<span class="pc bpc" id="L74" title="1 of 4 branches missed.">    return Objects.equals(name, seat.name) &amp;&amp; Objects.equals(reservedFor,</span>
+        seat.reservedFor);
+  }
+
+  /**
+   * @return - the information of the seat, as an integer
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L83">    return Objects.hash(name, reservedFor);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

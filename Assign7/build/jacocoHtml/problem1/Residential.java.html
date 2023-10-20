@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Residential.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign7</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Residential.java</span></div><h1>Residential.java</h1><pre class="source lang-java linenums">/**
+ * Class Residential is the child class of class Property,
+ * it has numOfBedrooms and numOfBathrooms.
+ */
+package problem1;
+
+import java.util.Objects;
+
+public class Residential extends Property{
+  private Integer numOfBedrooms;
+  private Double numOfBathrooms;
+
+  /**
+   * Constructor of class Residential
+   * @param address - the address of the properties, as a String
+   * @param size - the size of the properties, as an Integer
+   * @param numOfBedrooms - the number of bedrooms, as an Integer
+   * @param numOfBathrooms - the number of bathrooms, as a Double
+   */
+  public Residential(String address, Integer size, Integer numOfBedrooms, Double numOfBathrooms) {
+<span class="fc" id="L21">    super(address, size);</span>
+<span class="fc" id="L22">    this.numOfBedrooms = super.checkNonNegative(numOfBedrooms, 0);</span>
+<span class="fc" id="L23">    this.numOfBathrooms = super.checkNonNegative(numOfBathrooms, 0.0);</span>
+<span class="fc" id="L24">  }</span>
+
+  /**
+   * Return the number of bedrooms of the residential property
+   * @return - the number of bedrooms, as an Integer
+   */
+  public Integer getNumOfBedrooms() {
+<span class="fc" id="L31">    return numOfBedrooms;</span>
+  }
+
+  /**
+   * Return the number of bathrooms of the residential property
+   * @return - the number of bathrooms, as a Double
+   */
+  public Double getNumOfBathrooms() {
+<span class="fc" id="L39">    return numOfBathrooms;</span>
+  }
+
+  /**
+   * Check is the given object equals to this object
+   * @param o - a given object
+   * @return true is equals, false otherwise
+   */
+
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L50" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L51">      return true;</span>
+    }
+<span class="fc bfc" id="L53" title="All 4 branches covered.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L54">      return false;</span>
+    }
+<span class="fc bfc" id="L56" title="All 2 branches covered.">    if (!super.equals(o)) {</span>
+<span class="fc" id="L57">      return false;</span>
+    }
+<span class="fc" id="L59">    Residential that = (Residential) o;</span>
+<span class="pc bpc" id="L60" title="2 of 4 branches missed.">    return Objects.equals(numOfBedrooms, that.numOfBedrooms) &amp;&amp; Objects.equals(</span>
+        numOfBathrooms, that.numOfBathrooms);
+  }
+  /**
+   * @return the hashcode of the Property
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L68">    return Objects.hash(super.hashCode(), numOfBedrooms, numOfBathrooms);</span>
+  }
+
+  /**
+   * @return a String of the information about the Property
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L76">    return &quot;Residential{&quot; +</span>
+<span class="fc" id="L77">        super.toString() +</span>
+        &quot;, numOfBedrooms=&quot; + numOfBedrooms +
+        &quot;, numOfBathrooms=&quot; + numOfBathrooms +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

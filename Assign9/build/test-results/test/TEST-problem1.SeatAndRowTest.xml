@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="problem1.SeatAndRowTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-04-14T06:16:10" hostname="ZhengpengQiudeMacBook-Pro.local" time="0.014">
+  <properties/>
+  <testcase name="testToString()" classname="problem1.SeatAndRowTest" time="0.008"/>
+  <testcase name="getName()" classname="problem1.SeatAndRowTest" time="0.001"/>
+  <testcase name="getNumSeats()" classname="problem1.SeatAndRowTest" time="0.002"/>
+  <testcase name="isWheelchairAccessible()" classname="problem1.SeatAndRowTest" time="0.0"/>
+  <testcase name="getRowNumber()" classname="problem1.SeatAndRowTest" time="0.0"/>
+  <testcase name="testHashCode()" classname="problem1.SeatAndRowTest" time="0.001"/>
+  <testcase name="testEquals()" classname="problem1.SeatAndRowTest" time="0.0"/>
+  <system-out><![CDATA[The number of seats exceeds, number of seats set to 26.
+The seat's name should be a capital letter from A to Z.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

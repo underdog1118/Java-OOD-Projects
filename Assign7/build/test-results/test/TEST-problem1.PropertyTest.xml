@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="problem1.PropertyTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-04-14T04:28:02" hostname="karenas-mbp.lan" time="0.003">
+  <properties/>
+  <testcase name="testConstructorsException()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="testToString()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="getNumOfBathrooms()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="getNumOfOffices()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="getNumOfBedrooms()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="getAddress()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="getSize()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="getSuitableForRetail()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="testHashCode()" classname="problem1.PropertyTest" time="0.0"/>
+  <testcase name="testEquals()" classname="problem1.PropertyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

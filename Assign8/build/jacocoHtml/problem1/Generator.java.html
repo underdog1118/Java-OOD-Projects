@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Generator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign8</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">Generator.java</span></div><h1>Generator.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Objects;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+/**
+ The abstract class Generator is the parent class for the EmailGenerator and LetterGenerator classes.
+ It contains common methods and attributes used by both subclasses.
+ */
+public abstract class Generator {
+  private String fileName;
+  private ArrayList&lt;String&gt; template;
+  private List&lt;String[]&gt; csvData;
+  private String[] pointers;
+  private String folderName;
+  private String filePath;
+  protected String filePrefix;
+
+  /**
+   Constructor for the Generator class.
+   @param fileName the name of the template file.
+   @param folderName the name of the folder where the generated files will be saved.
+   @param filePath the name of the csv file
+   */
+<span class="fc" id="L33">  public Generator(String fileName, String folderName, String filePath) {</span>
+<span class="fc" id="L34">    this.fileName = fileName;</span>
+<span class="fc" id="L35">    this.folderName = folderName;</span>
+<span class="fc" id="L36">    this.filePath = filePath;</span>
+<span class="fc" id="L37">    this.template = new TemplateReader(fileName).getTemplate();</span>
+<span class="fc" id="L38">    this.csvData = new CSVReader(filePath).readCSV();</span>
+<span class="fc" id="L39">    this.pointers = this.csvData.get(0);</span>
+
+<span class="fc" id="L41">  }</span>
+
+
+  /**
+   Method for generating letters or emails.
+   */
+  public void writeLetters(){
+<span class="fc" id="L48">    this.createFolder(this.folderName);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">    for(int i = 1; i &lt; csvData.size(); i++){</span>
+<span class="fc" id="L50">      String[] info = csvData.get(i);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">      if(this.pointers.length == info.length){</span>
+<span class="fc" id="L52">        this.writeOneLetter(this.filePrefix, i, info);</span>
+      }
+    }
+<span class="fc" id="L55">  };</span>
+
+  /**
+   Helper method of method writeLetters, create the folder where the generated files will be saved.
+   @param folderName the name of the folder to be created.
+   */
+  private void createFolder(String folderName){
+<span class="fc" id="L62">    File folder = new File(folderName);</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">    if(!folder.exists()){</span>
+<span class="nc" id="L64">      boolean success = folder.mkdir();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">      if(!success){</span>
+<span class="nc" id="L66">        System.err.println(&quot;Failed to create directory '&quot;+ folderName +&quot;'&quot;);</span>
+      }
+    }
+<span class="fc" id="L69">  }</span>
+
+  /**
+   Helper method of method writeLetters, generate a single letter or email.
+   @param prefix the prefix to be added to the file name.
+   @param numLetter the number of the letter or email being generated.
+   @param info the data to be used to fill in the template.
+   */
+  private void writeOneLetter(String prefix, Integer numLetter, String[] info) {
+    try {
+<span class="fc" id="L79">      BufferedWriter writer = new BufferedWriter(new FileWriter(this.folderName + &quot;/&quot; + prefix + Integer.toString(numLetter) + &quot;.txt&quot;));</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">      for (int i = 0; i &lt; template.size(); i++) {</span>
+<span class="fc" id="L81">        String line = template.get(i);</span>
+<span class="fc" id="L82">        String result = this.generateResult(line, info) + &quot;\n&quot;;</span>
+<span class="fc" id="L83">        writer.write(result);</span>
+      }
+<span class="fc" id="L85">      writer.close();</span>
+<span class="nc" id="L86">    } catch (IOException e) {</span>
+<span class="nc" id="L87">      System.out.println(&quot;An error occurred.&quot;);</span>
+<span class="nc" id="L88">      e.printStackTrace();</span>
+<span class="fc" id="L89">    }</span>
+<span class="fc" id="L90">  }</span>
+
+  /**
+   Helper method of method writeLetters, fill in the template with data from the CSV file for one line.
+   @param line the line of the template to be filled in.
+   @param info the data to be used to fill in the template.
+   @return the filled-in line of the template.
+   */
+  private String generateResult(String line, String[] info) {
+<span class="fc" id="L99">    Pattern pattern = Pattern.compile(&quot;\\[\\[((\\p{Alpha}+)|((\\p{Alpha}+)\\_(\\p{Alpha}+)))\\]\\]&quot;);</span>
+<span class="fc" id="L100">    Matcher matcher = pattern.matcher(line);</span>
+<span class="fc" id="L101">    StringBuffer stringBuffer = new StringBuffer();</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">    while (matcher.find()) {</span>
+<span class="fc" id="L103">      String replacement = &quot;&quot;;</span>
+<span class="fc" id="L104">      String match = matcher.group(1);</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">      for(int i = 0; i &lt; info.length; i++) {</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (match.equals(this.pointers[i])) {</span>
+<span class="fc" id="L107">          replacement = info[i];</span>
+        }
+      }
+<span class="fc" id="L110">      matcher.appendReplacement(stringBuffer, replacement);</span>
+<span class="fc" id="L111">    }</span>
+<span class="fc" id="L112">    matcher.appendTail(stringBuffer);</span>
+<span class="fc" id="L113">    return stringBuffer.toString();</span>
+  }
+
+  /**
+   * Getter for fileName
+   * @return - fileName, as String
+   */
+  public String getFileName() {
+<span class="fc" id="L121">    return fileName;</span>
+  }
+  /**
+   * Getter for template
+   * @return - template, as ArrayList&lt;String&gt;
+   */
+  public ArrayList&lt;String&gt; getTemplate() {
+<span class="fc" id="L128">    return template;</span>
+  }
+  /**
+   * Getter for csvData
+   * @return - csvData, as List&lt;String[]&gt;
+   */
+  public List&lt;String[]&gt; getCsvData() {
+<span class="fc" id="L135">    return csvData;</span>
+  }
+  /**
+   * Getter for pointers
+   * @return - pointers, as String[]
+   */
+  public String[] getPointers() {
+<span class="fc" id="L142">    return pointers;</span>
+  }
+  /**
+   * Getter for folderName
+   * @return - folderName, as String
+   */
+  public String getFolderName() {
+<span class="fc" id="L149">    return folderName;</span>
+  }
+  /**
+   * Getter for filePath
+   * @return - filePath, as String
+   */
+  public String getFilePath() {
+<span class="fc" id="L156">    return filePath;</span>
+  }
+  /**
+   * Getter for filePrefix
+   * @return - filePrefix, as String
+   */
+  public String getFilePrefix() {
+<span class="fc" id="L163">    return filePrefix;</span>
+  }
+  /**
+   * @param o - the given object
+   * @return true if equals, false otherwise
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="pc bpc" id="L171" title="1 of 2 branches missed.">    if (this == o) {</span>
+<span class="nc" id="L172">      return true;</span>
+    }
+<span class="pc bpc" id="L174" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L175">      return false;</span>
+    }
+<span class="fc" id="L177">    Generator generator = (Generator) o;</span>
+    // Check if the csvData are equals first
+<span class="pc bpc" id="L179" title="1 of 2 branches missed.">    if(csvData.size() != generator.csvData.size()){</span>
+<span class="nc" id="L180">      return false;</span>
+    }
+<span class="fc bfc" id="L182" title="All 2 branches covered.">    for(int i = 0; i &lt; csvData.size(); i++){</span>
+<span class="fc" id="L183">      String[] line1 = csvData.get(i);</span>
+<span class="fc" id="L184">      String[] line2 = generator.csvData.get(i);</span>
+      // if they have different length:
+<span class="pc bpc" id="L186" title="1 of 2 branches missed.">      if(line1.length != line2.length){</span>
+<span class="nc" id="L187">        return false;</span>
+      }
+<span class="pc bpc" id="L189" title="1 of 2 branches missed.">      if(!Arrays.equals(line1, line2)){</span>
+<span class="nc" id="L190">        return false;</span>
+      }
+    }
+<span class="fc bfc" id="L193" title="All 2 branches covered.">    return Objects.equals(fileName, generator.fileName) &amp;&amp;</span>
+<span class="pc bpc" id="L194" title="1 of 2 branches missed.">        Objects.equals(template, generator.template) &amp;&amp;</span>
+<span class="pc bpc" id="L195" title="1 of 2 branches missed.">        Arrays.equals(pointers, generator.pointers) &amp;&amp;</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">        Objects.equals(folderName, generator.folderName) &amp;&amp;</span>
+<span class="pc bpc" id="L197" title="1 of 2 branches missed.">        Objects.equals(filePath, generator.filePath) &amp;&amp;</span>
+<span class="pc bpc" id="L198" title="1 of 2 branches missed.">        Objects.equals(filePrefix, generator.filePrefix);</span>
+  }
+
+  /**
+   *
+   * @return the hashcode of the object, as an integer
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L207">    int result = Objects.hash(fileName, template, csvData, folderName, filePath, filePrefix);</span>
+<span class="fc" id="L208">    result = 31 * result + Arrays.hashCode(pointers);</span>
+<span class="fc" id="L209">    return result;</span>
+  }
+  /**
+   * @return the information of the Generator, as a String
+   */
+  @Override
+  public String toString() {
+<span class="nc" id="L216">    return &quot;fileName='&quot; + fileName + '\'' +</span>
+        &quot;, template=&quot; + template +
+        &quot;, csvData=&quot; + csvData +
+<span class="nc" id="L219">        &quot;, pointers=&quot; + Arrays.toString(pointers) +</span>
+        &quot;, folderName='&quot; + folderName + '\'' +
+        &quot;, filePath='&quot; + filePath + '\'' +
+        &quot;, filePrefix='&quot; + filePrefix + '\'' +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

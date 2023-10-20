@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandLineParser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assign8</a> &gt; <a href="index.source.html" class="el_package">problem1</a> &gt; <span class="el_source">CommandLineParser.java</span></div><h1>CommandLineParser.java</h1><pre class="source lang-java linenums">package problem1;
+
+import java.io.File;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Paths;
+import java.util.Objects;
+
+/**
+ * Processes and validates command line arguments. This class doesn't *do* anything with the values provided by the user
+ * beyond initial validation. It is another class' responsibility to determine what to do with the user input.
+ */
+public class CommandLineParser {
+  public static final String EMAIL = &quot;--email&quot;;
+  public static final String EMAIL_TEMPLATE = &quot;--email-template&quot;;
+  public static final String LETTER = &quot;--letter&quot;;
+  public static final String LETTER_TEMPLATE = &quot;--letter-template&quot;;
+  public static final String OUTPUT_DIR = &quot;--output-dir&quot;;
+  public static final String CSV_FILE = &quot;--csv-file&quot;;
+  public static final String DEFAULT_MESSAGE =
+      &quot;&quot;&quot;
+          
+          
+          Usage:
+          --email Generate email messages. If this option is provided, then -- email-template must also be provided.
+          --email-template &lt;path/to/file&gt; A filename for the email template. --letter Generate letters. If this option is provided, then --letter- template must also be provided.
+          --letter-template &lt;path/to/file&gt; A filename for the letter template. --output-dir &lt;path/to/folder&gt; The folder to store all generated files. This option is required.
+          --csv-file &lt;path/to/folder&gt; The CSV file to process. This option is required.
+
+          Examples:
+          --email --email-template email-template.txt --output-dir emails -- csv-file customer.csv
+          
+          --letter --letter-template letter-template.txt --output-dir letters - -csv-file customer.csv&quot;&quot;&quot;;
+
+<span class="fc" id="L34">  private Boolean letterRequired = false;</span>
+<span class="fc" id="L35">  private Boolean emailRequired = false;</span>
+<span class="fc" id="L36">  private String emailTemplate = null;</span>
+<span class="fc" id="L37">  private String letterTemplate = null;</span>
+<span class="fc" id="L38">  private String outputDir = null;</span>
+<span class="fc" id="L39">  private String csvFile = null;</span>
+
+  /**
+   * Constructor for the CommandLineParser class
+   * @param args The arguments provided by the user.
+   * @throws InvalidArgumentsException If the arguments supplied are invalid.
+   */
+<span class="fc" id="L46">  public CommandLineParser(String[] args) throws InvalidArgumentsException {</span>
+<span class="fc" id="L47">    this.processArgs(args);</span>
+<span class="fc" id="L48">    this.checkRequiredArgs();</span>
+<span class="fc" id="L49">  }</span>
+
+  /**
+   * Helper method to populate the instance variables.
+   * @param args The args supplied by the user.
+   * @throws InvalidArgumentsException If an invalid argument is provided at the command line.
+   */
+  public void processArgs(String[] args) throws  InvalidArgumentsException{
+<span class="fc bfc" id="L57" title="All 2 branches covered.">    for (int i = 0; i &lt; args.length; i++) {</span>
+<span class="fc bfc" id="L58" title="All 7 branches covered.">      switch (args[i]) {  //enhanced switch</span>
+<span class="fc" id="L59">        case EMAIL -&gt; this.emailRequired = true;</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">        case EMAIL_TEMPLATE -&gt; this.emailTemplate = ((i + 1) &lt; args.length) ? args[i + 1] : null;</span>
+<span class="fc" id="L61">        case LETTER -&gt; this.letterRequired = true;</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        case LETTER_TEMPLATE -&gt; this.letterTemplate = ((i + 1) &lt; args.length) ? args[i + 1] : null;</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">        case OUTPUT_DIR -&gt; this.outputDir = ((i + 1) &lt; args.length) ? args[i + 1] : null;</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        case CSV_FILE -&gt; this.csvFile = ((i + 1) &lt; args.length) ? args[i + 1] : null;</span>
+      }
+    }
+<span class="fc" id="L67">  }</span>
+
+  /**
+   * check that some options require other options to also be present.
+   * @throws InvalidArgumentsException if required options are not provided
+   */
+  public void checkRequiredArgs() throws InvalidArgumentsException{
+<span class="fc bfc" id="L74" title="All 2 branches covered.">    if (this.csvFile == null) {</span>
+<span class="fc" id="L75">      throw new InvalidArgumentsException(&quot;Error: --csv-file is required.&quot;);</span>
+    }
+<span class="fc bfc" id="L77" title="All 2 branches covered.">    if (this.outputDir == null) {</span>
+<span class="fc" id="L78">      throw new InvalidArgumentsException(&quot;Error: --output-dir is required.&quot;);</span>
+    }
+<span class="pc bpc" id="L80" title="1 of 4 branches missed.">    if (this.emailRequired &amp;&amp; this.emailTemplate == null) {</span>
+<span class="fc" id="L81">      throw new InvalidArgumentsException(&quot;Error: --email provided but no --email-template was given.&quot; + DEFAULT_MESSAGE);</span>
+    }
+<span class="fc bfc" id="L83" title="All 4 branches covered.">    if (this.letterRequired &amp;&amp; this.letterTemplate == null) {</span>
+<span class="fc" id="L84">      throw new InvalidArgumentsException(&quot;Error: --letter provided but no --letter-template was given.&quot; + DEFAULT_MESSAGE);</span>
+    }
+
+<span class="fc" id="L87">  }</span>
+
+  /**
+   * Gets the value of letter.
+   *
+   * @return the value of letter
+   */
+  public Boolean getLetterRequired() {
+<span class="fc" id="L95">    return this.letterRequired;</span>
+  }
+
+  /**
+   * Gets the value of email.
+   *
+   * @return the value of email
+   */
+  public Boolean getEmailRequired() {
+<span class="fc" id="L104">    return this.emailRequired;</span>
+  }
+
+  /**
+   * Gets the value of emailTemplate.
+   *
+   * @return the value of emailTemplate
+   */
+  public String getEmailTemplate() {
+<span class="fc" id="L113">    return this.emailTemplate;</span>
+  }
+
+  /**
+   * Gets the value of letterTemplate.
+   *
+   * @return the value of letterTemplate
+   */
+  public String getLetterTemplate() {
+<span class="fc" id="L122">    return this.letterTemplate;</span>
+  }
+
+  /**
+   * Gets the value of outputDir.
+   *
+   * @return the value of outputDir
+   */
+  public String getOutputDir() {
+<span class="fc" id="L131">    return this.outputDir;</span>
+  }
+
+  /**
+   * Gets the value of csvFile.
+   *
+   * @return the value of csvFile
+   */
+  public String getCsvFile() {
+<span class="fc" id="L140">    return this.csvFile;</span>
+  }
+
+  /**
+   * equals method for the class
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L148" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L149">      return true;</span>
+    }
+<span class="pc bpc" id="L151" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L152">      return false;</span>
+    }
+<span class="fc" id="L154">    CommandLineParser that = (CommandLineParser) o;</span>
+<span class="pc bpc" id="L155" title="3 of 4 branches missed.">    return Objects.equals(letterRequired, that.letterRequired) &amp;&amp; Objects.equals(emailRequired,</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">        that.emailRequired) &amp;&amp; Objects.equals(emailTemplate, that.emailTemplate)</span>
+<span class="nc bnc" id="L157" title="All 4 branches missed.">        &amp;&amp; Objects.equals(letterTemplate, that.letterTemplate) &amp;&amp; Objects.equals(</span>
+<span class="pc bnc" id="L158" title="All 2 branches missed.">        outputDir, that.outputDir) &amp;&amp; Objects.equals(csvFile, that.csvFile);</span>
+  }
+
+  /**
+   * hashCode method for the class
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L166">    return Objects.hash(letterRequired, emailRequired, emailTemplate, letterTemplate, outputDir, csvFile);</span>
+  }
+
+  /**
+   * toString method for the class
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L174">    return &quot;CommandLineParser{&quot; +</span>
+        &quot;letter=&quot; + letterRequired +
+        &quot;, email=&quot; + emailRequired +
+        &quot;, emailTemplate='&quot; + emailTemplate + '\'' +
+        &quot;, letterTemplate='&quot; + letterTemplate + '\'' +
+        &quot;, outputDir='&quot; + outputDir + '\'' +
+        &quot;, csvFile='&quot; + csvFile + '\'' +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
